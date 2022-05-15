@@ -1,0 +1,5 @@
+runtime: java11
+
+env_variables:
+  PROJECT_NUMBER: xxxx
+  PROJECT_ID: xxxx

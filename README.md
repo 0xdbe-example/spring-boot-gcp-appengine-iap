@@ -15,8 +15,26 @@ Create on Google Cloud Platform:
 
 ### Backend
 
+- configure gcloud CLI
+
 ```bash
-export GOOGLE_CLOUD_PROJECT=<PROJECT_ID>
+gcloud auth login
+gcloud config set project <PORJECT_ID>
+```
+
+- Define App settings in ``src/main/appengine/app.yaml``
+
+```
+runtime: java11
+
+env_variables:
+  PROJECT_NUMBER: <YOUR_NUMBER>
+  PROJECT_ID: <YOUR_ID>
+```
+
+- Deploy
+
+```bash
 ./gradlew appengineDeploy
 ```
 

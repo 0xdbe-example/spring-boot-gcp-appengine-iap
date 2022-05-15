@@ -2,7 +2,7 @@ plugins {
 	id 'org.springframework.boot' version '2.4.2'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
-	id 'com.google.cloud.tools.appengine' version '2.4.1'
+	id 'com.google.cloud.tools.appengine' version '2.4.3'
 }
 
 group = 'com.example'
@@ -14,9 +14,8 @@ repositories {
 }
 
 dependencies {
-    compile 'com.google.appengine:appengine-api-1.0-sdk:+' 
-    compile group: 'commons-codec', name: 'commons-codec', version: '1.5'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.google.cloud:spring-cloud-gcp-starter-security-iap:3.2.1'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
@@ -27,8 +26,8 @@ test {
 appengine {
 
   deploy {
-    projectId = System.getenv('GOOGLE_CLOUD_PROJECT')
-    version = '1'
+    projectId = "GCLOUD_CONFIG"
+    version = "GCLOUD_CONFIG"
   }
   
 }
