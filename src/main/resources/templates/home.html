@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+    <title>Getting Started: Serving Web Content</title> 
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>HTTP Headers set by IAP:</h1>
+
+    <h3>X-Goog-Authenticated-User-Emai:</h3>
+    <p th:text="${mail}"/>
+
+    <h3>X-Goog-Authenticated-User-Id:</h3>
+    <p th:text="${userid}"/>
+
+    <h3>x-goog-iap-jwt-assertion:</h3>
+    <p th:text="${jwt}"/>
+
+    <h1>JWT:</h1>
+    <p th:text="${jwtDecoded}"/>
+
+    <h1>Spring Security:</h1>
+    <h3>Username:</h3>
+    <p th:text="${spingUserName}"/>
+    
+</body>
+</html>
