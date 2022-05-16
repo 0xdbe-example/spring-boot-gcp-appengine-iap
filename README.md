@@ -6,19 +6,40 @@ This is a simple spring boot application which can be used to try App Engine wit
 
 ### Infrastructre
 
-Create on Google Cloud Platform:
+- Get GCP credential
 
-- Cloud identity
-- Project
-- App Engine
-- IAP
+```bash
+gcloud auth application-default login
+```
 
-### Backend
+- Set variable for terraform in ``terraform/terraform.tfvars``:
 
-- configure gcloud CLI
+```
+project_short_name  = "hw"
+project_long_name   = "Hello World"
+organization_id     = "xxxx"
+billing_account_id  = "xxxx"
+email_address       = "contact@example.com"
+```
+
+- Deploy infra
+
+```bash
+cd terraform
+terraform apply
+```
+
+### Application
+
+- Get GCP credential
 
 ```bash
 gcloud auth login
+```
+
+- Configure gcloud CLI
+
+```bash
 gcloud config set project <PORJECT_ID>
 ```
 
@@ -40,9 +61,7 @@ env_variables:
 
 ## Usage
 
-- Go to the Identity-Aware Proxy page
-
-- Assign `IAP-secured Web App User` role to you.
+- Assign role called `IAP-secured Web App User` (ID: ``roles/iap.httpsResourceAccessor``) to you.
 
 - Open your web site in a brower
 
